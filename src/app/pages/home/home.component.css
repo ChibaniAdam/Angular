@@ -158,6 +158,8 @@ background-blend-mode: overlay;
   box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3);
   margin-top: 75px;
   margin-left: 40%;
+  transition: all 400ms ease-in-out;
+
 }
 
 

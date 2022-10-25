@@ -1,11 +1,13 @@
 <h1>{{title}}</h1>
 <form class="col-md-3">
-<input type="number" name="search" class="form-control" placeholder="Search by price"  [(ngModel)]="priceMax"/>
+<input type="number" name="search" class="form-control" placeholder="Search by price" (keyup)="filterList()"  [(ngModel)]="priceMax"/>
 </form>
 <br/>
+<div><button class="btn btn-success" (click)="counter()">Out of stock</button></div>
+<div class="alert" [ngClass]=" stock!=0? 'alert-danger':'alert-success'">{{stock+" produit sont hors stock "  || "Aucun produit et hors stock "}}<a routerLink="/product/outofstock" [hidden]="stock==0">Buy more</a></div>
 <div class="row">
-  <div class="col-md-8  col-xl-4" *ngFor="let product of list">
-    <div class="card" style="width: 18rem;" *ngIf="(product.price<=priceMax || !priceMax) ">
+  <div class="col-xl-4 mb-4" *ngFor="let product of listf">
+    <div class="card" style="width: 18rem;" >
       <img src="{{product.picture}}"
         class="card-img-top" style="height:22rem" alt="...">
       <div class="card-body">

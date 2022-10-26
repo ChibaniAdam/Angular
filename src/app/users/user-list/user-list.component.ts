@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class UserListComponent implements OnInit {
   public list: User[]
   public job: String;
+  public count: number;
+  public role: String;
   constructor(private us: UsersService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -31,6 +33,10 @@ export class UserListComponent implements OnInit {
         }
       }
     )
+  }
+  countByRole(e: any):void{
+    this.count=this.list.filter((user)=>user.role==e.target.value).length;
+    console.log(this.role)
   }
 
 }

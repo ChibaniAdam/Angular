@@ -13,7 +13,8 @@ export class UsersService {
       phone: '046 5685 6969',
       email:'JamesNix@spy.com',
       address:'5 Boar Lane SELLING 2LG',
-      picture:'https://bootdey.com/img/Content/avatar/avatar2.png'
+      picture:'https://bootdey.com/img/Content/avatar/avatar2.png',
+      role:'user'
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ export class UsersService {
       phone: '012 6587 1236',
       email:'DarleneSmith@spy.com',
       address:'57 Guildry Street GAMRIE',
-      picture:'https://bootdey.com/img/Content/avatar/avatar3.png'
+      picture:'https://bootdey.com/img/Content/avatar/avatar3.png',
+      role:'user'
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export class UsersService {
       phone: '012 6587 1236',
       email:' WilliamSwift@spy.co',
       address:'80 South Street MONKW 7BR',
-      picture:'https://bootdey.com/img/Content/avatar/avatar4.png'
+      picture:'https://bootdey.com/img/Content/avatar/avatar4.png',
+      role:'admin'
     },
   ]
 

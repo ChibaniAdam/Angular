@@ -1,1 +1,39 @@
-<p>users works!</p>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto  col-xl-2 px-sm-2 px-0 bg-light">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a  routerLink="list" class="nav-link align-middle px-0" >
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">All</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  data-bs-target="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle" aria-expanded="false" aria-controls="submenu1">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline"><b>Job</b></span> </a>
+                        <ul class="collapse show  nav flex-column ms-1" id="submenu1" >
+                            <li class="w-100">
+                                <a class="nav-link px-0" [routerLink]="['job','Full Stack Developer']"> <span class="d-none d-sm-inline">Full Stack Developer</span></a>
+                            </li>
+                            <li>
+                                <a class="nav-link px-0" [routerLink]="['job','UI/UX Designer']"> <span class="d-none d-sm-inline">UI/UX Designer</span></a>
+                            </li>
+                            <li>
+                              <a class="nav-link px-0" [routerLink]="['job','Backend Developer']"> <span class="d-none d-sm-inline">Backend Developer</span> </a>
+                          </li>
+                        </ul>
+                    </li>
+                </ul>
+  
+            </div>
+        </div>
+        <div class="col py-3">
+          <div class="container">
+           <router-outlet></router-outlet>
+          </div>
+        </div>
+    </div>
+  </div>

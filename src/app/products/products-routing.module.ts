@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminProductComponent } from './admin-product/admin-product.component';
+import { FormProductComponent } from './form-product/form-product.component';
 import { ListProductComponent } from './list-product/list-product.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { ProductsComponent } from './products.component';
@@ -9,7 +10,8 @@ const routes: Routes = [{ path: '', component: ProductsComponent,children:[ {pat
 {path:"list", redirectTo: '', pathMatch:'full'},
 {path:'new',component:NewProductComponent},
 {path:'category/:category', component:ListProductComponent},
-{path:'outofstock',component:AdminProductComponent}] }];
+{path:'outofstock',component:AdminProductComponent},
+{path:'update/:id', component:NewProductComponent}] }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -4,6 +4,7 @@ export class User{
     job: string;
     phone: string;
     email: string;
+    password: string;
     address: string;
     picture: string;
     role: string;

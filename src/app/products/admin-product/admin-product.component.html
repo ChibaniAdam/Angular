@@ -18,7 +18,7 @@
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
             <td><button class="btn btn-sm btn-danger"(click)="delete(product)">Delete❌</button>&nbsp;
-            <button class="btn btn-sm btn-warning">Update✏️</button></td>
+            <button class="btn btn-sm btn-warning" [routerLink]="['/product/update',product.id]">Update✏️</button></td>
         </tr>
     </tbody>
 </table>

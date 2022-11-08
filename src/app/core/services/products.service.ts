@@ -50,5 +50,15 @@ export class ProductsService {
   public delete():void{
     
   }
+  public getById(id:number):any{
+    for (let p of this.list) {
+      if(p.id==id) return p;
+      }
+  }
+  public update(p2:Product):void{
+    for (let p of this.list) {
+      if(p.id==p2.id) p=p2 ;
+      }
+  }
   constructor() { }
 }

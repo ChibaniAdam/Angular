@@ -1,0 +1,39 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../assets/userIcon.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div class="alert alert-danger" *ngIf="l==false">
+        <p >Wrong password or email</p>
+        
+      </div>
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email*" formControlName="email">
+      <div class="alert alert-danger" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+        <p *ngIf="form.controls['email'].hasError('required')">Email is required</p>
+        <p *ngIf="form.controls['email'].hasError('email')">Email is invalid</p>
+      </div>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password*" formControlName="password">
+      <div class="alert alert-danger" *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+        <p *ngIf="form.controls['password'].hasError('required')">Password is required</p>
+        <p *ngIf="form.controls['password'].hasError('minlength')">Password is too short</p>
+      </div>
+      <button type="submit" class="fadeIn fourth mb-2" [disabled]="form.invalid">Log In</button>
+      <button type="reset" class="fadeIn fourth mb-4" >Reset </button>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UsersService {
+  public currentUser:User;
   public list:User[]=[
     {
       id: 1,
@@ -14,6 +15,7 @@ export class UsersService {
       email:'JamesNix@spy.com',
       address:'5 Boar Lane SELLING 2LG',
       picture:'https://bootdey.com/img/Content/avatar/avatar2.png',
+      password:'jamesnix123',
       role:'user'
     },
     {
@@ -24,6 +26,7 @@ export class UsersService {
       email:'DarleneSmith@spy.com',
       address:'57 Guildry Street GAMRIE',
       picture:'https://bootdey.com/img/Content/avatar/avatar3.png',
+      password:'darlenesmith123',
       role:'user'
     },
     {
@@ -31,9 +34,10 @@ export class UsersService {
       name: 'William Swift',
       job: 'Backend Developer',
       phone: '012 6587 1236',
-      email:' WilliamSwift@spy.co',
+      email:'WilliamSwift@spy.co',
       address:'80 South Street MONKW 7BR',
       picture:'https://bootdey.com/img/Content/avatar/avatar4.png',
+      password:'williamswift123',
       role:'admin'
     },
   ]
@@ -42,6 +46,14 @@ export class UsersService {
 for (let u of this.list) {
 if(u.id==id) return u;
 }
+  }
+  public getLogin(email:string,pw:string):any{
+    for (let u of this.list) {
+      if(u.email==email && u.password==pw){this.currentUser=u; return u;}
+      }
+  }
+  public logOut(){
+    this.currentUser=new User();
   }
 
   constructor() { }

@@ -1,1 +1,48 @@
-<p>new-product works!</p>
+<div>
+<h1>{{action}} a product</h1>
+<form #f="ngForm" class="container">
+    <div class="form-group col-md-6">
+      <label for="name">Name*   </label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="product.name" id="name" placeholder="name" required  minlength="3" #n="ngModel" pattern="[a-zA-Z]{3,12}$">
+      <div class="alert alert-danger" *ngIf="n.invalid && n.touched">
+        <div *ngIf="n.hasError('required')">Name is required</div>
+      <div *ngIf="n.hasError('minlength')">Minimum length is 3</div>
+      <div *ngIf="n.hasError('pattern')">Only alphabets are accepted</div>
+    </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="price">Price*</label>
+        <input type="number" class="form-control" name="price" [(ngModel)]="product.price" required id="price" min="0" placeholder="price" #p="ngModel">
+        <div class="alert alert-danger" *ngIf="p.invalid && p.touched"> 
+            <div *ngIf="n.hasError('required')">Price is required</div>
+        <div *ngIf="n.hasError('min')">Price cant be negative</div>
+    </div>
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="quantity">Quantity* </label>
+        <input type="number" class="form-control" name="quantity" [(ngModel)]="product.quantity" required id="quantity" placeholder="quantity" #q="ngModel">
+        <div class="alert alert-danger" *ngIf="q.invalid && q.touched">Quantity is required</div>
+    </div>  
+    <div class="form-group col-md-6">
+      <label for="category">Category* </label>
+      <select class="form-control" id="category"  name="category" [(ngModel)]="product.category" required #c="ngModel">
+        <option>men</option>
+        <option>women</option>
+        <option>kids</option>
+      </select>
+      <div class="alert alert-danger" *ngIf="c.invalid && c.touched">Category is required</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="description">Description* </label>
+      <textarea class="form-control" id="description" name="description" rows="3" [(ngModel)]="product.description" required #d="ngModel" placeholder="description"></textarea>
+      <div class="alert alert-danger" *ngIf="d.invalid && d.touched">Description is required</div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="picture">Picture* </label>
+        <input type="text" class="form-control" id="picture" name="picture" placeholder="picture" [(ngModel)]="product.picture" required #p2="ngModel"> 
+        <div class="alert alert-danger" *ngIf="p2.invalid && p2.touched">Picture is required</div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()" [disabled]="f.invalid">{{action}}</button>
+<small class="text-muted text-sm ">Fields with "*" are required</small>
+  </form>

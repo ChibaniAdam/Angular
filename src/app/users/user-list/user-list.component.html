@@ -28,7 +28,7 @@
                     <div class="d-flex align-items-center">
                         <div><img src="{{user.picture}}" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
                         <div class="flex-1 ms-3">
-                            <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">{{user.name}}</a></h5>
+                            <h5 class="font-size-16 mb-1"><a [routerLink]="['/user/profile',user.id]" class="text-dark">{{user.name}}</a></h5>
                             <span class="badge badge-soft-success mb-0">💻 {{user.job}}</span>
                         </div>
                     </div>
